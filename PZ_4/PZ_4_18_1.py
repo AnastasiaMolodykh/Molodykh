@@ -15,16 +15,15 @@ while type(number_n) != int:                        # обработка иск�
     except ValueError:
        print("Неправильно ввели!")
        number_n = input("Введите целое число: ")
-a = 1
+while number_n < 0:
+    print("Вы ввели отрицательное число! Попробуйте снова!")
+    number_n = int(input("Введите целое число: "))
 x = 1
-k = 1
-while k <= number_n:
-    while a > 1:
-        a *= number_n
-        number_n -= 1
-        x += ((number_x ** number_n) / a)
-    k += 1
-
+factorial = 1
+for i in range(1, number_n + 1):
+    for j in range(1, i + 1):
+        factorial *= j
+    x += (number_x ** i) / factorial
 print(x)
 
 

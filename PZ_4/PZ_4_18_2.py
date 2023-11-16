@@ -14,8 +14,11 @@ while type(b) != int: # обработка исключений
     except ValueError:
         print("Неправильно ввели!")
         b = input("Введите второе число: ")
-k = 1
-while a <= b:
-    print(str(a)*k)
-    a += 1
-    k += 1
+if a < b:
+    k = a
+    while a <= b:
+        print(str(a)*k)
+        a += 1
+        k += 1
+else:
+    print("Ошибка! Попробуйте снова!")
