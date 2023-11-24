@@ -3,16 +3,19 @@
 #переменные B, C и D (A — входной, B, C, D — выходные параметры; все параметры
 #являются вещественными). С помощью этой функции найти вторую, третью и
 #четвертую степень пяти данных чисел.
-def Power234(A):
+import random
+def PowerA234(A,B,C,D):
     B = A**2
     C = A**3
     D = A**4
     return B, C, D
-f = float(input("Введите количество чисел: "))
-while f>0:
-    A = float(input("Введите число: "))
-    n = Power234(A)
-    print(n)
-    f-=1
+
+numbers = []
+for i in range(5):
+    numbers.append(random.randint(0, 100))
+for i in numbers:
+    B, C, D = PowerA234(i, 0, 0, 0)
+    print(f"Число: {i}, Вторая степень: {B}, Третья степень: {C}, Четвертая степень: {D}")
+
 
 
