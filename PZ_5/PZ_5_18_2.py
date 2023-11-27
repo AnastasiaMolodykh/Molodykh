@@ -12,7 +12,7 @@ def PowerA234(A,B,C,D):
 
 numbers = []
 for i in range(5):
-    numbers.append(random.randint(0, 100))
+    numbers.append(random.randint(0, 3))
 for i in numbers:
     B, C, D = PowerA234(i, 0, 0, 0)
     print(f"Число: {i}, Вторая степень: {B}, Третья степень: {C}, Четвертая степень: {D}")
