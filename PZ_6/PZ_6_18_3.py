@@ -3,6 +3,7 @@
 #позицию.
 
 my_list =[8,1,2,3,5,7,9]
+print(my_list)
 elem = my_list.pop(0)
 new_list = []
 for i in my_list:
