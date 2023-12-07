@@ -19,7 +19,7 @@ def closest_numbers(R, lst):
 R = int(input("Введите число R: "))
 while type(R) != int:
     try:
-        number_x = int(R)
+        R = int(R)
     except ValueError:
        print("Неправильно ввели!")
        R = int(input("Введите число R: "))
