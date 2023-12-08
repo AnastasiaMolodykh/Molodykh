@@ -10,4 +10,4 @@ k = 0
 for i in range(10):
     if (A[0] < A[i]) and (A[i] < A[9]):
         k = i +1
-print(k)
+print("Порядкой номер нужного числа: ",k)
