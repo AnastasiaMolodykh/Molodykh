@@ -26,7 +26,7 @@ while type(R) != int:
 lst = []
 N = int(input("Введите размер списка: "))
 for i in range(N):
-    lst.append(random.randint(0, 20))
+    lst.append(random.randint(0, 200))
 print(lst)
 result = closest_numbers(R, lst)
 
