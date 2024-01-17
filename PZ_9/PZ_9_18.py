@@ -2,8 +2,16 @@
 #значение роста (в см.). (Пример, {"Андрей": 178, "Виктор": 150, "Максим": 200, …},
 #наибольшее 200, наименьшее 150)
 
+# height = {"Андрей": 178, "Виктор": 150, "Максим": 200, "Игорь": 161, "Олег": 204, "Николай": 186}
+# A = []
+# for i in height:
+#     A.append(height[i])
+# print("Максимальный рост:", max(A), "Минимальный рост:", min(A))
+
 height = {"Андрей": 178, "Виктор": 150, "Максим": 200, "Игорь": 161, "Олег": 204, "Николай": 186}
-A = []
-for i in height:
-    A.append(height[i])
-print("Максимальный рост:", max(A), "Минимальный рост:", min(A))
+
+max_height_name = max(height, key=height.get)
+min_height_name = min(height, key=height.get)
+
+print(f"Максимальный рост: {height[max_height_name]}")
+print(f"Минимальный рост: {height[min_height_name]}")
