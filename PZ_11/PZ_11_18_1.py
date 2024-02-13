@@ -40,11 +40,7 @@ f_2.writelines(sr_ar)
 f_2.write('\n')
 f_2.close()
 
-p = [1,1,1]
-for i in p:
-    r = p[i] + p[i+1]
-    p.append(r)
-print(p)
+
 
 
 
