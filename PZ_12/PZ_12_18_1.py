@@ -4,10 +4,9 @@ from functools import reduce
 
 posled = int(input("Введите количество элементов: "))
 
-a = []
-for i in range(1,posled+1):
-    a.append(i)
+a = [i for i in range(1,posled+1)]
 print(a)
+
 r = len(a)//3
 f = [a.pop(0) for i in range(r)]
 f = [a.pop(-1) for i in range(r)]
