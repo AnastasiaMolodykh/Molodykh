@@ -41,22 +41,15 @@ f_2.write('\n')
 f_2.close()
 
 f_2 = open('data_copy.txt', 'a')
-three_first = [k[0], k[1], (k[1])**2]
-two_last = [k[-1],(k[-2])**2]
+one_first = [(k[1])**2]
+one_last = [(k[-2])**2]
 n = []
 for i in range(1, len(k)-1):
     n.append(((k[i-1] + k[i+1]) ** 2))
-k.pop(0)
-k.pop(-1)
-spis = []
-for i,j in zip(k,n):
-    spis.append(i)
-    spis.append(j)
-itog = three_first+spis+two_last
+itog = one_first+n+one_last
 f_2.write('Последовательность, в которой каждый последующий элемент равен квадрату суммы двух соседних элементов: ')
 f_2.writelines(str(itog))
 f_2.close()
-
 
 
 
