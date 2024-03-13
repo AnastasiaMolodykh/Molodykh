@@ -1,18 +1,15 @@
 # 2. В матрице найти среднее арифметическое элементов последних двух столбцов.
 
 from functools import reduce
+import numpy as np
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+matrix = np.random.randint(10, size = (3,3))
+print("Исходная матрица:")
+print(matrix)
 
 two_last = map(lambda row: row[-2:], matrix)
 list_chis = reduce(lambda x, y: x + y, two_last)
 
-sum_el = sum(list_chis)
-kol = len(list_chis)
-sr_ar = sum_el / kol
+sr_ar = sum(list_chis) / len(list_chis)
 
 print("Среднее арифметическое элементов последних двух столбцов:", sr_ar)
