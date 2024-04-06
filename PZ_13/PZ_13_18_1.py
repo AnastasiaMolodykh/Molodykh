@@ -7,7 +7,7 @@ print("Исходная матрица:")
 print(matrix)
 # def three(num):
 #     if num % 3 == 0:
-#         return num * 3
+#         yield num * 3
 #     return num
 
 # new_matrix = list(map(lambda row: list(map(three, row)), matrix))
