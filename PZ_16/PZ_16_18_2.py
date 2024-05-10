@@ -4,40 +4,43 @@
 # будут иметь свои уникальные свойства и методы.
 
 class Transport:
-    max_speed = ''
-    kolvo_koles = ''
+    def __init__(self, max_speed, num_wheels):
+        self.max_speed = max_speed
+        self.num_wheels = num_wheels
 
 class Car(Transport):
-
-    def __init__(self, color, pyt, time):
-        self.color = color
-        self.pyt = pyt
+    def __init__(self, max_speed, num_wheels, path, time):
+        super().__init__(max_speed, num_wheels)
+        self.path = path
         self.time = time
 
-    def avto(self):
-        print('Максимальная скорость данного автомобиля: ', self.max_speed)
-        print('Количество колес автомобиля: ', self.kolvo_koles)
-    def rate(self):
-        S = self.pyt
-        t = self.time
-        V = S / t
-        print("Скорость автомобиля в данной поездке: ", V)
+    def calculate_speed(self):
+        if self.time > 0:
+            return self.path / self.time
+        else:
+            return 0
+
+    def describe(self):
+        speed = self.calculate_speed()
+        return f"Автомобиль: максимальная скорость: {self.max_speed} км/ч, количество колёс: {self.num_wheels}, путь: {self.path} км, время:: {self.time} ч, расчетная скорость: {speed} км/ч."
 
 class Motorcycle(Transport):
-    def __init__(self, massa, speed, time):
-        self.massa = massa
+    def __init__(self, max_speed, num_wheels, speed, time):
+        super().__init__(max_speed, num_wheels)
         self.speed = speed
         self.time = time
 
-    def mot(self):
-        print('Максимальная скорость данного мотоцикла: ', self.max_speed)
-        print('Количество колес мотоцикла: ', self.kolvo_koles)
+    def calculate_path(self):
+        return self.speed * self.time
 
-    def way(self):
-        v = self.speed
-        t = self.time
-        S = v * t
-        print("Данный мотоцик проехал: ", S)
+    def describe(self):
+        path = self.calculate_path()
+        return f"Мотоцикл: максимальная скорость: {self.max_speed} км/ч, количество колёс:{self.num_wheels}, скорость: {self.speed} км/ч, время: {self.time} ч, расчетный путь: {path} км."
 
-avt = Car()
 
+# Пример использования
+car = Car(180, 4, 400, 4)
+print(car.describe())
+
+motorcycle = Motorcycle(200, 2, 85, 3)
+print(motorcycle.describe())
