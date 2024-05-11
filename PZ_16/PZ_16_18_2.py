@@ -37,8 +37,6 @@ class Motorcycle(Transport):
         path = self.calculate_path()
         return f"Мотоцикл: максимальная скорость: {self.max_speed} км/ч, количество колёс:{self.num_wheels}, скорость: {self.speed} км/ч, время: {self.time} ч, расчетный путь: {path} км."
 
-
-# Пример использования
 car = Car(180, 4, 400, 4)
 print(car.describe())
 
