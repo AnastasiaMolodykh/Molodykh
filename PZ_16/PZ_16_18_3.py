@@ -27,12 +27,10 @@ def load_def(filename):
     with open(filename, 'rb') as file:
         return pickle.load(file)
 
-# Создание экземпляров класса
 circle1 = Circle(5)
 circle2 = Circle(7)
 circle3 = Circle(10)
 
-# Вычисление и вывод информации о кругах
 print("Круг 1:")
 print("Площадь:", circle1.area())
 print("Длина окружности:", circle1.length())
