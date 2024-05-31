@@ -76,7 +76,7 @@ with sq.connect('Insurance_Company.db') as con:
 
 with sq.connect('Insurance_Company.db') as con:
     cur = con.cursor()
-    cur.execute("DELETE FROM contract WHERE insurance_type = 'ОСАГОS'")
+    cur.execute("DELETE FROM contract WHERE insurance_type = 'ОСАГО'")
 
 with sq.connect('Insurance_Company.db') as con:
     cur = con.cursor()

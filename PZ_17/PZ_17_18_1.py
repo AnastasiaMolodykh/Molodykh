@@ -1,5 +1,6 @@
 # Разработать программу с применением пакета tk, взяв в качестве условия одну
 # любую задачу из ПЗ №№ 2 – 9.
+# Задача из ПЗ 3. Дано целое положительное число. Проверить истинность высказывания: «Данное число является нечетным трехзначным».
 
 import tkinter as tk
 from tkinter import messagebox
@@ -19,11 +20,9 @@ def check_number():
     except ValueError:
         messagebox.showerror("Ошибка", "Пожалуйста, введите целое число.")
 
-# Создаем основное окно
 root = tk.Tk()
 root.title("Проверка числа")
 
-# Создаем и размещаем виджеты
 label = tk.Label(root, text="Введите целое положительное число:")
 label.pack(pady=10)
 
@@ -33,5 +32,4 @@ entry.pack(pady=5)
 button = tk.Button(root, text="Проверить", command=check_number)
 button.pack(pady=10)
 
-# Запуск главного цикла
 root.mainloop()

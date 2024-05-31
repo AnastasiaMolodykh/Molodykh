@@ -1,3 +1,6 @@
+# Задание предполагает, что у студента есть проект с практическими работами (№№ 2-13),
+# оформленный согласно требованиям. Все задания выполняются c использованием модуля
+# OS:
 #   перейдите в каталог PZ11.  Выведите  список  всех  файлов  в  этом  каталоге.  Имена
 # вложенных подкаталогов выводить не нужно.
 #   перейти в корень проекта, создать папку с именем test. В ней создать еще одну папку
@@ -12,20 +15,18 @@
 
 import os
 
-os.chdir('PZ11')
-print("Список файлов в каталоге PZ11:")
-for item in os.listdir('.'):
-    if os.path.isfile(item):
-        print(item)
+os.chdir(r'C:\Users\Анастасия\Documents\Molodykh\PZ_11')
+print(os.listdir())
 
 os.chdir('..')
 
-os.makedirs('test/test1', exist_ok=True)
+os.makedirs('test/test1')
 
-os.rename('PZ6/файл1.txt', 'test/файл1.txt')
-os.rename('PZ6/файл2.txt', 'test/файл2.txt')
+os.replace('PZ_6/PZ_6_18_1.py', 'test/PZ_6_18_1.py')
+os.replace('PZ_6/PZ_6_18_2.py', 'test/PZ_6_18_2.py')
+os.replace('PZ_7/PZ_7_18_2.py', 'test/test1/PZ_7_18_2.py')
 
-os.rename('PZ7/файл3.txt', 'test/test1/test.txt')
+os.rename("test/test1/PZ_7_18_2.py", "test/test1/test.txt")
 
 print("Размер файлов в папке test:")
 for item in os.listdir('test'):
@@ -33,16 +34,12 @@ for item in os.listdir('test'):
     if os.path.isfile(file_path):
         print(f"{item}: {os.path.getsize(file_path)} байт")
 
-os.chdir('PZ11')
+os.chdir(r'C:\Users\Анастасия\Documents\Molodykh\PZ_11')
 shortest_name = min((f for f in os.listdir('.') if os.path.isfile(f)), key=len)
-print("Файл с самым коротким именем в PZ11:", os.path.basename(shortest_name))
+print("Файл с самым коротким именем в PZ_11:", os.path.basename(shortest_name))
 
-pdf_folder = 'reports'
-pdf_file = 'PZ_12.pdf'
-pdf_path = os.path.join(pdf_folder, pdf_file)
-if os.path.isfile(pdf_path):
-    os.startfile(pdf_path)
-else:
-    print(f"Файл {pdf_file} не найден в папке {pdf_folder}")
+os.chdir(r'C:\Users\Анастасия\Documents\Molodykh\reports')
+os.startfile('ПЗ_9.pdf')
 
-os.remove('test/test1/test.txt')
+os.chdir("..")
+os.remove("test/test1/test.txt")
